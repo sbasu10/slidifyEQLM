@@ -33,8 +33,8 @@
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
     <h1>Earthquakes LM</h1>
-    <h2>Linear Model For CSV Datasets</h2>
-    <p>Sujoy Basu<br/>Coursera Student</p>
+    <h2>Linear Regression Model For Earthquakes CSV Dataset</h2>
+    <p>Sujoy Basu<br/></p>
   </hgroup>
   <article></article>  
 </slide>
@@ -43,15 +43,16 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Main Idea: Leverage the lm function for a Handy Application</h2>
+    <h2>Main Idea: Leverage the lm function for Interactive Linear Regression Application</h2>
   </hgroup>
   <article data-timings="">
     <ol>
 <li>lm is robust function in R, used to fit linear models</li>
-<li>It takes an object of class &quot;formula&quot; as input</li>
-<li>Prompt user for the terms that make up the formula</li>
-<li>Limit the terms offered as choices to the columns of CSV file</li>
-<li>Render plots and summary information of linear model on single page</li>
+<li>Provides a linear regression model for the dataset installed with application</li>
+<li>Prompt user for the columns in dataset that will be the response and predictors in the model</li>
+<li>Render plots and summary information of linear regression model on single page</li>
+<li>Leverage the reactive aspect of Shiny for iterative refinement of model</li>
+<li>User can iterate by selecting different predictors and observing results</li>
 </ol>
 
   </article>
@@ -65,8 +66,8 @@
   <article data-timings="">
     <ol>
 <li>Simplicity and ease of use are primary considerations</li>
-<li>Left panel captures response column and terms of the predictor from the user</li>
-<li>The main panel has separate tabs for the linear model, dataset and help section </li>
+<li>Left panel captures response column and the predictors from the user</li>
+<li>The main panel has separate tabs for the linear regression model, dataset and documentation </li>
 </ol>
 
   </article>
@@ -80,9 +81,9 @@
   <article data-timings="">
     <ol>
 <li>The runRegression method is reactive</li>
-<li>Unless user changes the selections in left panel, model is not recomputed</li>
+<li>When user changes the selections in left panel, model is recomputed</li>
 <li>Residual plots, followed by model and ANOVA summary for maximum information</li>
-<li>Easy to spot key information such as residuals and Adjusted R-squared metric</li>
+<li>Watch for changes in statistics such as Adjusted R-squared metric when selections are changed</li>
 </ol>
 
   </article>
@@ -94,16 +95,14 @@
     <h2>Future Work</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code>## [1] &quot;Formula (frmlObj): &quot;
-</code></pre>
-
-<pre><code>## Magnitude ~ Depth + NST
+    <pre><code>## Magnitude ~ Depth + NST
 </code></pre>
 
 <ol>
-<li>The defaults choices are reasonable for this Earthquakes dataset</li>
-<li>Application can be extended to take the dataset as input, and detect reasonable defaults</li>
-<li>The model may be applied to test dataset, and the predictions displayed in a separate tab</li>
+<li>The default choices for response and predictor variables shown above are reasonable for this Earthquakes dataset </li>
+<li>Application may be extended to take the dataset as input, and detect reasonable defaults</li>
+<li>User may have more tunable parameters in future, and can upload test datasets</li>
+<li>The  predictions on test datasets will be displayed in separate tabs</li>
 </ol>
 
   </article>
@@ -116,7 +115,7 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Main Idea: Leverage the lm function for a Handy Application'>
+        data-slide=1 title='Main Idea: Leverage the lm function for Interactive Linear Regression Application'>
          1
       </a>
     </li>
